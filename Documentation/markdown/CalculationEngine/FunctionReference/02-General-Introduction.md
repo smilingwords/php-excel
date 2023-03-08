@@ -12,25 +12,22 @@ The following is the list of those functions that are implemented within PHPExce
 
     Excel Function      | Notes
     --------------------|---------
-	CUBEKPIMEMBER       | Not yet Implemented
-	CUBEMEMBER          | Not yet Implemented
-	CUBEMEMBERPROPERTY  | Not yet Implemented
-	CUBERANKEDMEMBER    | Not yet Implemented
-	CUBESET             | Not yet Implemented
-	CUBESETCOUNT        | Not yet Implemented
-	CUBEVALUE           | Not yet Implemented
-
+    CUBEKPIMEMBER       | Not yet Implemented
+    CUBEMEMBER          | Not yet Implemented
+    CUBEMEMBERPROPERTY  | Not yet Implemented
+    CUBERANKEDMEMBER    | Not yet Implemented
+    CUBESET             | Not yet Implemented
+    CUBESETCOUNT        | Not yet Implemented
+    CUBEVALUE           | Not yet Implemented
 
 #### Database Functions
 
     Excel Function | Notes
     ---------------|---------
 
-
 #### Date and Time Functions
 
     Excel Function | Notes
     ---------------|---------
-    EDATE          | Not a standard function within Excel 5, but an add-in from the Analysis ToolPak.  
+    EDATE          | Not a standard function within Excel 5, but an add-in from the Analysis ToolPak.
     EOMONTH        | Not a standard function within Excel 5, but an add-in from the Analysis ToolPak.
-

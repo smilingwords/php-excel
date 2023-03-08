@@ -23,7 +23,8 @@
 **************************************************************************************
 
 
-Planned for 1.8.2
+2018-11-22 (v1.8.2):
+- Security  (MBaker)                            - Fix and improve XXE security scanning for XML-based Readers
 - Bugfix:   (MBaker)                            - Fix to getCell() method when cell reference includes a worksheet reference
 - Bugfix:   (ncrypthic)       Work Item GH-570  - Ignore inlineStr type if formula element exists
 - Bugfix:   (hernst42)        Work Item GH-709  - Fixed missing renames of writeRelationShip (from _writeRelationShip)
@@ -42,7 +43,7 @@ Planned for 1.8.2
 - Bugfix:   (sarciszewski)    Work Item GH-329  - Avoid potential divide by zero in basedrawing
 - Bugfix:   (ymaerschalck)    Work Item GH-405  - XML External Entity (XXE) Processing, different behaviour between simplexml_load_string() and simplexml_load_file().
 - Bugfix:   (MBaker)                            - Fix to ensure that current cell is maintained when executing formula calculations
-- Bugfix:   (MBaker)          Work Item GH-350  - Keep/set the value on Reader _loadSheetsOnly as NULL, courtesy of Restless-ET 
+- Bugfix:   (MBaker)          Work Item GH-350  - Keep/set the value on Reader _loadSheetsOnly as NULL, courtesy of Restless-ET
 - Bugfix:   (MBaker)          Work Item CP18105 - Loading an Excel 2007 spreadsheet throws an "Autofilter must be set on a range of cells" exception
 - Bugfix:   (MBaker)          Work Item GH-388  - Fix to autoloader registration for backward compatibility with PHP 5.2.0 not accepting the prepend flag
 - Bugfix:   (MBaker)          Work Item GH-384  - DOM loadHTMLFile() failing with options flags when using PHP < 5.4.0

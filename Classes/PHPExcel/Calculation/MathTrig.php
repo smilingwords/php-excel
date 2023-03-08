@@ -1220,24 +1220,24 @@ class PHPExcel_Calculation_MathTrig
     }
 
 
- 	/**
-	 *	SUMIFS
-	 *
-	 *	Counts the number of cells that contain numbers within the list of arguments
-	 *
-	 *	Excel Function:
-	 *		SUMIFS(value1[,value2[, ...]],condition)
-	 *
-	 *	@access	public
-	 *	@category Mathematical and Trigonometric Functions
-	 *	@param	mixed		$arg,...		Data values
-	 *	@param	string		$condition		The criteria that defines which cells will be summed.
-	 *	@return	float
-	 */
-	public static function SUMIFS() {
-		$arrayList = func_get_args();
+     /**
+     *    SUMIFS
+     *
+     *    Counts the number of cells that contain numbers within the list of arguments
+     *
+     *    Excel Function:
+     *        SUMIFS(value1[,value2[, ...]],condition)
+     *
+     *    @access    public
+     *    @category Mathematical and Trigonometric Functions
+     *    @param    mixed        $arg,...        Data values
+     *    @param    string        $condition        The criteria that defines which cells will be summed.
+     *    @return    float
+     */
+    public static function SUMIFS() {
+        $arrayList = func_get_args();
 
-		$sumArgs = PHPExcel_Calculation_Functions::flattenArray(array_shift($arrayList));
+        $sumArgs = PHPExcel_Calculation_Functions::flattenArray(array_shift($arrayList));
 
         while (count($arrayList) > 0) {
             $aArgsArray[] = PHPExcel_Calculation_Functions::flattenArray(array_shift($arrayList));
@@ -1275,9 +1275,9 @@ class PHPExcel_Calculation_MathTrig
             }
         }
 
-		// Return
-		return array_sum($sumArgs);
-	}
+        // Return
+        return array_sum($sumArgs);
+    }
 
 
     /**

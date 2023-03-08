@@ -18,25 +18,25 @@ DATE(year, month, day)
 
 ##### Parameters
 
-**year** The year number.  
+**year** The year number.
 
 If this value is between 0 (zero) and 1899 inclusive (for the Windows 1900 calendar), or between 4 and 1903 inclusive (for the Mac 1904), then PHPExcel adds it to the Calendar base year, so a value of 108 will interpret the year as 2008 when using the Windows 1900 calendar, or 2012 when using the Mac 1904 calendar.
 
-**month** The month number.  
+**month** The month number.
 
 If this value is greater than 12, the DATE function adds that number of months to the first month in the year specified. For example, DATE(2008,14,2) returns a value representing February 2, 2009.
 
-If the value of __month__ is less than 1, then that value will be adjusted by -1, and that will then be subtracted from the first month of the year specified. For example, DATE(2008,0,2) returns a value representing December 2, 2007; while DATE(2008,-1,2) returns a value representing November 2, 2007.
+If the value of **month** is less than 1, then that value will be adjusted by -1, and that will then be subtracted from the first month of the year specified. For example, DATE(2008,0,2) returns a value representing December 2, 2007; while DATE(2008,-1,2) returns a value representing November 2, 2007.
 
-**day** The day number.  
+**day** The day number.
 
 If this value is greater than the number of days in the month (and year) specified, the DATE function adds that number of days to the first day in the month. For example, DATE(2008,1,35) returns a value representing February 4, 2008.
 
-If the value of __day__ is less than 1, then that value will be adjusted by -1, and that will then be subtracted from the first month of the year specified. For example, DATE(2008,3,0) returns a value representing February 29, 2008; while DATE(2008,3,-2) returns a value representing February 27, 2008.
+If the value of **day** is less than 1, then that value will be adjusted by -1, and that will then be subtracted from the first month of the year specified. For example, DATE(2008,3,0) returns a value representing February 29, 2008; while DATE(2008,3,-2) returns a value representing February 27, 2008.
 
 ##### Return Value
 
-**mixed** A date/time stamp that corresponds to the given date.  
+**mixed** A date/time stamp that corresponds to the given date.
 
 This could be a PHP timestamp value (integer), a PHP date/time object, or an Excel timestamp value (real), depending on the value of PHPExcel_Calculation_Functions::getReturnDateType().
 
@@ -103,32 +103,32 @@ DATEDIF(date1, date2 [, unit])
 
 ##### Parameters
 
-**date1** First Date.  
+**date1** First Date.
 
 An Excel date value, PHP date timestamp, PHP date object, or a date represented as a string.
 
-**date2** Second Date.  
+**date2** Second Date.
 
 An Excel date value, PHP date timestamp, PHP date object, or a date represented as a string.
 
-**unit** The interval type to use for the calculation  
+**unit** The interval type to use for the calculation
 
 This is a string, comprising one of the values listed below:
 
-Unit | Meaning                         | Description
------|---------------------------------|--------------------------------
-m    | Months                          | Complete calendar months between the dates.
-d    | Days                            | Number of days between the dates.
-y    | Years                           | Complete calendar years between the dates.
-ym   | Months Excluding Years          | Complete calendar months between the dates as if they were of the same year.
-yd   | Days Excluding Years            | Complete calendar days between the dates as if they were of the same year.
-md   | Days Excluding Years And Months | Complete calendar days between the dates as if they were of the same month and same year.
+| Unit | Meaning                         | Description                                                                               |
+| ---- | ------------------------------- | ----------------------------------------------------------------------------------------- |
+| m    | Months                          | Complete calendar months between the dates.                                               |
+| d    | Days                            | Number of days between the dates.                                                         |
+| y    | Years                           | Complete calendar years between the dates.                                                |
+| ym   | Months Excluding Years          | Complete calendar months between the dates as if they were of the same year.              |
+| yd   | Days Excluding Years            | Complete calendar days between the dates as if they were of the same year.                |
+| md   | Days Excluding Years And Months | Complete calendar days between the dates as if they were of the same month and same year. |
 
 The unit value is not case sensitive, and defaults to "d".
 
 ##### Return Value
 
-**integer** An integer value that reflects the difference between the two dates.  
+**integer** An integer value that reflects the difference between the two dates.
 
 This could be the number of full days, months or years between the two dates, depending on the interval unit value passed into the function as the third parameter.
 
@@ -229,13 +229,13 @@ DATEVALUE(dateString)
 
 ##### Parameters
 
-**date** Date String.  
+**date** Date String.
 
 A string, representing a date value.
 
 ##### Return Value
 
-**mixed** A date/time stamp that corresponds to the given date.  
+**mixed** A date/time stamp that corresponds to the given date.
 
 This could be a PHP timestamp value (integer), a PHP date/time object, or an Excel timestamp value (real), depending on the value of PHPExcel_Calculation_Functions::getReturnDateType().
 
@@ -297,7 +297,7 @@ PHPExcel_Calculation_Functions::setReturnDateType($saveFormat);
 
 DATEVALUE uses the php date/time object implementation of strtotime() (which can handle a wider range of formats than the normal strtotime() function), and it is also called for any date parameter passed to other date functions (such as DATEDIF) when the parameter value is a string.
 
-__WARNING:-__ PHPExcel accepts a wider range of date formats than MS Excel, so it is entirely possible that Excel will return a #VALUE! error when passed a date string that it can’t interpret, while PHPExcel is able to translate that same string into a correct date value.
+**WARNING:-** PHPExcel accepts a wider range of date formats than MS Excel, so it is entirely possible that Excel will return a #VALUE! error when passed a date string that it can’t interpret, while PHPExcel is able to translate that same string into a correct date value.
 
 Care should be taken in workbooks that use string formatted dates in calculations when writing to Excel5 or Excel2007.
 
@@ -313,7 +313,7 @@ DAY(datetime)
 
 ##### Parameters
 
-**datetime** Date. 
+**datetime** Date.
 
 An Excel date value, PHP date timestamp, PHP date object, or a date represented as a string.
 
@@ -364,11 +364,11 @@ DAYS360(date1, date2 [, method])
 
 #### Parameters
 
-**date1** First Date.  
+**date1** First Date.
 
 An Excel date value, PHP date timestamp, PHP date object, or a date represented as a string.
 
-**date2** Second Date.  
+**date2** Second Date.
 
 An Excel date value, PHP date timestamp, PHP date object, or a date represented as a string.
 
@@ -435,7 +435,7 @@ $retVal = call_user_func_array(
 
 ##### Notes
 
-__WARNING:-__ This function does not currently work with the Excel5 Writer when a PHP Boolean is used for the third (optional) parameter (as shown in the example above), and the writer will generate and error. It will work if a numeric 0 or 1 is used for the method parameter; or if the Excel TRUE() and FALSE() functions are used instead.
+**WARNING:-** This function does not currently work with the Excel5 Writer when a PHP Boolean is used for the third (optional) parameter (as shown in the example above), and the writer will generate and error. It will work if a numeric 0 or 1 is used for the method parameter; or if the Excel TRUE() and FALSE() functions are used instead.
 
 #### EDATE
 
@@ -498,7 +498,7 @@ $retVal = call_user_func_array(
 
 ###### Notes
 
-__WARNING:-__ This function is currently not supported by the Excel5 Writer because it is not a standard function within Excel 5, but an add-in from the Analysis ToolPak.
+**WARNING:-** This function is currently not supported by the Excel5 Writer because it is not a standard function within Excel 5, but an add-in from the Analysis ToolPak.
 
 #### EOMONTH
 
@@ -559,7 +559,7 @@ $retVal = call_user_func_array(
 
 ##### Notes
 
-__WARNING:-__ This function is currently not supported by the Excel5 Writer because it is not a standard function within Excel 5, but an add-in from the Analysis ToolPak.
+**WARNING:-** This function is currently not supported by the Excel5 Writer because it is not a standard function within Excel 5, but an add-in from the Analysis ToolPak.
 
 #### HOUR
 
@@ -726,7 +726,7 @@ Note that the PHPExcel function is PHPExcel_Calculation_Functions::MONTHOFYEAR()
 
 #### NETWORKDAYS
 
-The NETWORKDAYS function returns the number of whole working days between a *start date* and an *end date*. Working days exclude weekends and any dates identified in *holidays*. Use NETWORKDAYS to calculate employee benefits that accrue based on the number of days worked during a specific term.
+The NETWORKDAYS function returns the number of whole working days between a _start date_ and an _end date_. Working days exclude weekends and any dates identified in _holidays_. Use NETWORKDAYS to calculate employee benefits that accrue based on the number of days worked during a specific term.
 
 ##### Syntax
 
@@ -759,9 +759,11 @@ The number of working days between startDate and endDate.
 ##### Examples
 
 ```php
+
 ```
 
 ```php
+
 ```
 
 ##### Notes
@@ -791,9 +793,11 @@ This could be a PHP timestamp value (integer), a PHP date/time object, or an Exc
 ##### Examples
 
 ```php
+
 ```
 
 ```php
+
 ```
 
 ##### Notes
@@ -997,4 +1001,3 @@ There are no additional notes on this function
 ### YEARFRAC
 
 Not yet documented.
-

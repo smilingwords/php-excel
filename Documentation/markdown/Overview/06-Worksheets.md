@@ -91,4 +91,3 @@ $objPHPExcel->removeSheetByIndex($sheetIndex);
 ```
 
 If the currently active worksheet is deleted, then the sheet at the previous index position will become the currently active sheet.
-

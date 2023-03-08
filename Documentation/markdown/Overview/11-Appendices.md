@@ -6,9 +6,9 @@ Please refer to the internet page [http://www.codeplex.com/PHPExcel/Wiki/View.as
 
 ## Valid array keys for style applyFromArray()
 
-The following table lists the valid array keys for PHPExcel_Style applyFromArray() classes. If the "Maps to property"ù column maps a key to a setter, the value provided for that key will be applied directly. If the "Maps to property" column maps a key to a getter, the value provided for that key will be applied as another style array.
+The following table lists the valid array keys for PHPExcel_Style applyFromArray() classes. If the "Maps to property"ÔøΩ column maps a key to a setter, the value provided for that key will be applied directly. If the "Maps to property" column maps a key to a getter, the value provided for that key will be applied as another style array.
 
-__PHPExcel_Style__
+**PHPExcel_Style**
 
     Array key    | Maps to property
     -------------|-------------------
@@ -19,8 +19,7 @@ __PHPExcel_Style__
     numberformat | getNumberFormat()
     protection   | getProtection()
 
-
-__PHPExcel_Style_Fill__
+**PHPExcel_Style_Fill**
 
     Array key  | Maps to property
     -----------|-------------------
@@ -30,8 +29,7 @@ __PHPExcel_Style_Fill__
     endcolor   | getEndColor()
     color      | getStartColor()
 
-
-__PHPExcel_Style_Font__
+**PHPExcel_Style_Font**
 
     Array key   | Maps to property
     ------------|-------------------
@@ -45,8 +43,7 @@ __PHPExcel_Style_Font__
     superScript | setSuperScript()
     subScript   | setSubScript()
 
-
-__PHPExcel_Style_Borders__
+**PHPExcel_Style_Borders**
 
     Array key         | Maps to property
     ------------------|-------------------
@@ -61,16 +58,14 @@ __PHPExcel_Style_Borders__
     diagonaldirection | setDiagonalDirection()
     outline           | setOutline()
 
-
-__PHPExcel_Style_Border__
+**PHPExcel_Style_Border**
 
     Array key | Maps to property
     ----------|-------------------
     style     | setBorderStyle()
     color     | getColor()
 
-
-__PHPExcel_Style_Alignment__
+**PHPExcel_Style_Alignment**
 
     Array key   | Maps to property
     ------------|-------------------
@@ -81,20 +76,17 @@ __PHPExcel_Style_Alignment__
     shrinkToFit | setShrinkToFit()
     indent      | setIndent()
 
-
-__PHPExcel_Style_NumberFormat__
+**PHPExcel_Style_NumberFormat**
 
     Array key | Maps to property
     ----------|-------------------
     code      | setFormatCode()
 
-
-__PHPExcel_Style_Protection__
+**PHPExcel_Style_Protection**
 
     Array key | Maps to property
     ----------|-------------------
     locked    | setLocked()
     hidden    | setHidden()
 
-
-  [22]: http://www.codeplex.com/PHPExcel/Wiki/View.aspx?title=Credits&referringTitle=Home
+[22]: http://www.codeplex.com/PHPExcel/Wiki/View.aspx?title=Credits&referringTitle=Home

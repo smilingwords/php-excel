@@ -30,12 +30,12 @@ $inputFileName = './sampleData/example1.xls';
 
 echo 'Loading file ',pathinfo($inputFileName,PATHINFO_BASENAME),' using PHPExcel_Reader_Excel5<br />';
 $objReader = new PHPExcel_Reader_Excel5();
-//	$objReader = new PHPExcel_Reader_Excel2007();
-//	$objReader = new PHPExcel_Reader_Excel2003XML();
-//	$objReader = new PHPExcel_Reader_OOCalc();
-//	$objReader = new PHPExcel_Reader_SYLK();
-//	$objReader = new PHPExcel_Reader_Gnumeric();
-//	$objReader = new PHPExcel_Reader_CSV();
+//    $objReader = new PHPExcel_Reader_Excel2007();
+//    $objReader = new PHPExcel_Reader_Excel2003XML();
+//    $objReader = new PHPExcel_Reader_OOCalc();
+//    $objReader = new PHPExcel_Reader_SYLK();
+//    $objReader = new PHPExcel_Reader_Gnumeric();
+//    $objReader = new PHPExcel_Reader_CSV();
 $objPHPExcel = $objReader->load($inputFileName);
 
 

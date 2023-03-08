@@ -16,5 +16,5 @@ try {
     die('Error loading file: '.$e->getMessage());
 }
 ```
- > See Examples/Reader/exampleReader16.php for a working example of this code.
 
+> See Examples/Reader/exampleReader16.php for a working example of this code.

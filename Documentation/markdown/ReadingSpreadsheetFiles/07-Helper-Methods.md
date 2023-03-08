@@ -1,6 +1,5 @@
 # PHPExcel User Documentation – Reading Spreadsheet Files
 
-
 ## Helper Methods
 
 You can retrieve a list of worksheet names contained in a file without loading the whole file by using the Reader’s `listWorksheetNames()` method; similarly, a `listWorksheetInfo()` method will retrieve the dimensions of worksheet in a file without needing to load and parse the whole file.
@@ -21,7 +20,8 @@ foreach ($worksheetNames as $worksheetName) {
 }
 echo '</ol>';
 ```
- > See Examples/Reader/exampleReader18.php for a working example of this code.
+
+> See Examples/Reader/exampleReader18.php for a working example of this code.
 
 ### listWorksheetInfo
 
@@ -44,4 +44,5 @@ foreach ($worksheetData as $worksheet) {
 }
 echo '</ol>';
 ```
- > See Examples/Reader/exampleReader19.php for a working example of this code.
+
+> See Examples/Reader/exampleReader19.php for a working example of this code.

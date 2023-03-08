@@ -1,5 +1,4 @@
-# PHPExcel AutoFilter Reference 
-
+# PHPExcel AutoFilter Reference
 
 ## Autofilter Expressions
 
@@ -16,11 +15,11 @@ This returns an autoFilter column object, and you can then apply filter expressi
 
 There are a number of different types of autofilter expressions. The most commonly used are:
 
- - Simple Filters
- - DateGroup Filters
- - Custom filters
- - Dynamic Filters
- - Top Ten Filters
+- Simple Filters
+- DateGroup Filters
+- Custom filters
+- Dynamic Filters
+- Top Ten Filters
 
 These different types are mutually exclusive within any single column. You should not mix the different types of filter in the same column. PHPExcel will not actively prevent you from doing this, but the results are unpredictable.
 
