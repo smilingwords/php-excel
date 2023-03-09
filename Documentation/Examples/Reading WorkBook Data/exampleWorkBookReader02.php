@@ -42,7 +42,7 @@ $customPropertyList = $objPHPExcel->getProperties()->getCustomProperties();
 
 echo '<b>Custom Property names: </b><br />';
 foreach($customPropertyList as $customPropertyName) {
-	echo $customPropertyName,'<br />';
+    echo $customPropertyName,'<br />';
 }
 
 

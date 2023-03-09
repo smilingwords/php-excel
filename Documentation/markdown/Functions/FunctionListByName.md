@@ -23,9 +23,9 @@
     AVERAGEA            | CATEGORY_STATISTICAL           | PHPExcel_Calculation_Statistical::AVERAGEA
     AVERAGEIF           | CATEGORY_STATISTICAL           | PHPExcel_Calculation_Statistical::AVERAGEIF
     AVERAGEIFS          | CATEGORY_STATISTICAL           | **\*\*\*  Not yet Implemented**
-  
+
 #B
-  
+
     Excel Function      | Category                       | PHPExcel Function
     --------------------|--------------------------------|-------------------------------------------
     BAHTTEXT            | CATEGORY_TEXT_AND_DATA         | **\*\*\*  Not yet Implemented**

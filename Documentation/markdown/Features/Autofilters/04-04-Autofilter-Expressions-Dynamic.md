@@ -1,5 +1,4 @@
-# PHPExcel AutoFilter Reference 
-
+# PHPExcel AutoFilter Reference
 
 ## Autofilter Expressions
 
@@ -7,7 +6,7 @@
 
 Dynamic Filters are based on a dynamic comparison condition, where the value we're comparing against the cell values is variable, such as 'today'; or when we're testing against an aggregate of the cell data (e.g. 'aboveAverage'). Only a single dynamic filter can be applied to a column at a time.
 
-![04-04-dynamic-autofilter.png](./images/04-04-dynamic-autofilter.png "")
+![04-04-dynamic-autofilter.png](images/04-04-dynamic-autofilter.png)
 
 Again, we start by specifying a Filter type, this time a DYNAMICFILTER.
 
@@ -85,4 +84,3 @@ The valid set of dynamic filter categories is defined in the PHPExcel_Worksheet_
     AUTOFILTER_RULETYPE_DYNAMIC_BELOWAVERAGE | 'belowAverage' |
 
 We can only apply a single Dynamic Filter rule to a column at a time.
-

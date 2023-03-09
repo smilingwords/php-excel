@@ -128,7 +128,7 @@ class PHPExcel_Writer_Excel2007_Theme extends PHPExcel_Writer_Excel2007_WriterPa
         'hlink'        => '0000FF',
         'folHlink'    => '800080',
     );
-            
+
     /**
      * Write theme to XML format
      *

@@ -29,9 +29,9 @@ include 'PHPExcel/IOFactory.php';
 $inputFileName = './sampleData/example_1.xls';
 echo 'Loading file ',pathinfo($inputFileName,PATHINFO_BASENAME),' using IOFactory to identify the format<br />';
 try {
-	$objPHPExcel = PHPExcel_IOFactory::load($inputFileName);
+    $objPHPExcel = PHPExcel_IOFactory::load($inputFileName);
 } catch(PHPExcel_Reader_Exception $e) {
-	die('Error loading file "'.pathinfo($inputFileName,PATHINFO_BASENAME).'": '.$e->getMessage());
+    die('Error loading file "'.pathinfo($inputFileName,PATHINFO_BASENAME).'": '.$e->getMessage());
 }
 
 

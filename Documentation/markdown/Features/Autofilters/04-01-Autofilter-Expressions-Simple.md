@@ -1,5 +1,4 @@
-# PHPExcel AutoFilter Reference 
-
+# PHPExcel AutoFilter Reference
 
 ## Autofilter Expressions
 
@@ -7,7 +6,7 @@
 
 In MS Excel, Simple Filters are a dropdown list of all values used in that column, and the user can select which ones they want to display and which ones they want to hide by ticking and unticking the checkboxes alongside each option. When the filter is applied, rows containing the checked entries will be displayed, rows that don't contain those values will be hidden.
 
-![04-01-simple-autofilter.png](./images/04-01-simple-autofilter.png "")
+![04-01-simple-autofilter.png](images/04-01-simple-autofilter.png)
 
 To create a filter expression, we need to start by identifying the filter type. In this case, we're just going to specify that this filter is a standard filter.
 

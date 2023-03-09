@@ -16,9 +16,9 @@ PHPExcel_Calculation_Functions::setReturnDateType($returnDateType);
 
 where the following constants can be used for $returnDateType
 
- - PHPExcel_Calculation_Functions::RETURNDATE_PHP_NUMERIC
- - PHPExcel_Calculation_Functions::RETURNDATE_PHP_OBJECT
- - PHPExcel_Calculation_Functions::RETURNDATE_EXCEL
+- PHPExcel_Calculation_Functions::RETURNDATE_PHP_NUMERIC
+- PHPExcel_Calculation_Functions::RETURNDATE_PHP_OBJECT
+- PHPExcel_Calculation_Functions::RETURNDATE_EXCEL
 
 The method will return a Boolean True on success, False on failure (e.g. if an invalid value is passed in for the return date type).
 
@@ -50,8 +50,8 @@ PHPExcel_Shared_Date::setExcelCalendar($baseDate);
 
 where the following constants can be used for $baseDate
 
- - PHPExcel_Shared_Date::CALENDAR_WINDOWS_1900
- - PHPExcel_Shared_Date::CALENDAR_MAC_1904
+- PHPExcel_Shared_Date::CALENDAR_WINDOWS_1900
+- PHPExcel_Shared_Date::CALENDAR_MAC_1904
 
 The method will return a Boolean True on success, False on failure (e.g. if an invalid value is passed in).
 
@@ -60,18 +60,19 @@ The PHPExcel_Shared_Date::getExcelCalendar() method can be used to determine the
 ```php
 $baseDate = PHPExcel_Shared_Date::getExcelCalendar();
 ```
+
 The default is CALENDAR_WINDOWS_1900.
 
 ##### Functions that return a Date/Time Value
 
- - DATE
- - DATEVALUE
- - EDATE
- - EOMONTH
- - NOW
- - TIME
- - TIMEVALUE
- - TODAY
+- DATE
+- DATEVALUE
+- EDATE
+- EOMONTH
+- NOW
+- TIME
+- TIMEVALUE
+- TODAY
 
 #### Excel functions that accept Date and Time values as parameters
 
@@ -83,21 +84,21 @@ The same principle applies when data is being written to Excel. Cells containing
 
 ##### Functions that expect a Date/Time Value
 
- - DATEDIF
- - DAY
- - DAYS360
- - EDATE
- - EOMONTH
- - HOUR
- - MINUTE
- - MONTH
- - NETWORKDAYS
- - SECOND
- - WEEKDAY
- - WEEKNUM
- - WORKDAY
- - YEAR
- - YEARFRAC
+- DATEDIF
+- DAY
+- DAYS360
+- EDATE
+- EOMONTH
+- HOUR
+- MINUTE
+- MONTH
+- NETWORKDAYS
+- SECOND
+- WEEKDAY
+- WEEKNUM
+- WORKDAY
+- YEAR
+- YEARFRAC
 
 #### Helper Methods
 
@@ -120,4 +121,3 @@ Converts a PHP serialized date/timestamp or a PHP DateTime object to return an E
 ##### PHPExcel_Shared_Date::FormattedPHPToExcel($year, $month, $day, $hours=0, $minutes=0, $seconds=0)
 
 Takes year, month and day values (and optional hour, minute and second values) and returns an Excel date timestamp value.
-

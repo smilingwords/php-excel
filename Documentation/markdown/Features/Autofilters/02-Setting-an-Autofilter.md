@@ -1,5 +1,4 @@
-# PHPExcel AutoFilter Reference 
-
+# PHPExcel AutoFilter Reference
 
 ## Setting an AutoFilter area on a worksheet
 
@@ -21,4 +20,3 @@ $objPHPExcel->getActiveSheet()->setAutoFilter(
 ```
 
 This enables filtering, but does not actually apply any filters.
-

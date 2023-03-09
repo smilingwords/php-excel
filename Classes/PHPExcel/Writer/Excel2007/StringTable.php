@@ -142,7 +142,7 @@ class PHPExcel_Writer_Excel2007_StringTable extends PHPExcel_Writer_Excel2007_Wr
         if ($prefix !== null) {
             $prefix .= ':';
         }
-            
+
         // Loop through rich text elements
         $elements = $pRichText->getRichTextElements();
         foreach ($elements as $element) {
@@ -232,7 +232,7 @@ class PHPExcel_Writer_Excel2007_StringTable extends PHPExcel_Writer_Excel2007_Wr
         if ($prefix !== null) {
             $prefix .= ':';
         }
-            
+
         // Loop through rich text elements
         $elements = $pRichText->getRichTextElements();
         foreach ($elements as $element) {

@@ -154,7 +154,7 @@ class PHPExcel_Chart_DataSeries
         $this->plotCategory = $plotCategory;
         $this->smoothLine = $smoothLine;
         $this->plotStyle = $plotStyle;
-        
+
         if (is_null($plotDirection)) {
             $plotDirection = self::DIRECTION_COL;
         }

@@ -46,7 +46,7 @@ echo 'Reading the names of Worksheets in the WorkBook<br />';
 /**  Use the PHPExcel object's getSheetNames() method to get an array listing the names/titles of the WorkSheets in the WorkBook  */
 $sheetNames = $objPHPExcel->getSheetNames();
 foreach($sheetNames as $sheetIndex => $sheetName) {
-	echo 'WorkSheet #',$sheetIndex,' is named "',$sheetName,'"<br />';
+    echo 'WorkSheet #',$sheetIndex,' is named "',$sheetName,'"<br />';
 }
 
 

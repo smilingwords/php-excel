@@ -27,25 +27,25 @@ include 'PHPExcel/IOFactory.php';
 
 
 $inputFileType = 'Excel5';
-//	$inputFileType = 'Excel2007';
-//	$inputFileType = 'Excel2003XML';
-//	$inputFileType = 'OOCalc';
-//	$inputFileType = 'Gnumeric';
+//    $inputFileType = 'Excel2007';
+//    $inputFileType = 'Excel2003XML';
+//    $inputFileType = 'OOCalc';
+//    $inputFileType = 'Gnumeric';
 $inputFileName = './sampleData/example1.xls';
 $sheetname = 'Data Sheet #3';
 
 
 class MyReadFilter implements PHPExcel_Reader_IReadFilter
 {
-	public function readCell($column, $row, $worksheetName = '') {
-		// Read rows 1 to 7 and columns A to E only
-		if ($row >= 1 && $row <= 7) {
-			if (in_array($column,range('A','E'))) {
-				return true;
-			}
-		}
-		return false;
-	}
+    public function readCell($column, $row, $worksheetName = '') {
+        // Read rows 1 to 7 and columns A to E only
+        if ($row >= 1 && $row <= 7) {
+            if (in_array($column,range('A','E'))) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
 
 $filterSubset = new MyReadFilter();

@@ -27,7 +27,7 @@ namespace ClassDiagrams
             {
             }
         }
-    
+
         public PHPExcel_Writer_IWriter createWriter()
         {
             throw new System.NotImplementedException();
