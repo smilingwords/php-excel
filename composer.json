@@ -1,5 +1,5 @@
 {
-  "name": "phpoffice/phpexcel",
+  "name": "smilingwords/phpexcel",
   "description": "PHPExcel - OpenXML - Read, Create and Write Spreadsheet documents in PHP - Spreadsheet engine",
   "keywords": [
     "PHP",
@@ -27,6 +27,10 @@
     },
     {
       "name": "Erik Tilt"
+    },
+    {
+      "name": "smilingwords.eu",
+      "homepage": "https:://smilingwords.eu"
     }
   ],
   "require": {
