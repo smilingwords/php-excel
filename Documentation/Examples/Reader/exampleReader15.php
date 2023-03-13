@@ -39,31 +39,31 @@ echo '<hr />';
 echo $objPHPExcel->getSheetCount(),' worksheet',(($objPHPExcel->getSheetCount() == 1) ? '' : 's'),' loaded<br /><br />';
 $loadedSheetNames = $objPHPExcel->getSheetNames();
 foreach($loadedSheetNames as $sheetIndex => $loadedSheetName) {
-	echo '<b>Worksheet #',$sheetIndex,' -> ',$loadedSheetName,' (Formatted)</b><br />';
-	$objPHPExcel->setActiveSheetIndexByName($loadedSheetName);
-	$sheetData = $objPHPExcel->getActiveSheet()->toArray(null,true,true,true);
-	var_dump($sheetData);
-	echo '<br />';
+    echo '<b>Worksheet #',$sheetIndex,' -> ',$loadedSheetName,' (Formatted)</b><br />';
+    $objPHPExcel->setActiveSheetIndexByName($loadedSheetName);
+    $sheetData = $objPHPExcel->getActiveSheet()->toArray(null,true,true,true);
+    var_dump($sheetData);
+    echo '<br />';
 }
 
 echo '<hr />';
 
 foreach($loadedSheetNames as $sheetIndex => $loadedSheetName) {
-	echo '<b>Worksheet #',$sheetIndex,' -> ',$loadedSheetName,' (Unformatted)</b><br />';
-	$objPHPExcel->setActiveSheetIndexByName($loadedSheetName);
-	$sheetData = $objPHPExcel->getActiveSheet()->toArray(null,true,false,true);
-	var_dump($sheetData);
-	echo '<br />';
+    echo '<b>Worksheet #',$sheetIndex,' -> ',$loadedSheetName,' (Unformatted)</b><br />';
+    $objPHPExcel->setActiveSheetIndexByName($loadedSheetName);
+    $sheetData = $objPHPExcel->getActiveSheet()->toArray(null,true,false,true);
+    var_dump($sheetData);
+    echo '<br />';
 }
 
 echo '<hr />';
 
 foreach($loadedSheetNames as $sheetIndex => $loadedSheetName) {
-	echo '<b>Worksheet #',$sheetIndex,' -> ',$loadedSheetName,' (Raw)</b><br />';
-	$objPHPExcel->setActiveSheetIndexByName($loadedSheetName);
-	$sheetData = $objPHPExcel->getActiveSheet()->toArray(null,false,false,true);
-	var_dump($sheetData);
-	echo '<br />';
+    echo '<b>Worksheet #',$sheetIndex,' -> ',$loadedSheetName,' (Raw)</b><br />';
+    $objPHPExcel->setActiveSheetIndexByName($loadedSheetName);
+    $sheetData = $objPHPExcel->getActiveSheet()->toArray(null,false,false,true);
+    var_dump($sheetData);
+    echo '<br />';
 }
 
 ?>

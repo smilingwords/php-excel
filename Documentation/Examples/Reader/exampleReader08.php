@@ -27,10 +27,10 @@ include 'PHPExcel/IOFactory.php';
 
 
 $inputFileType = 'Excel5';
-//	$inputFileType = 'Excel2007';
-//	$inputFileType = 'Excel2003XML';
-//	$inputFileType = 'OOCalc';
-//	$inputFileType = 'Gnumeric';
+//    $inputFileType = 'Excel2007';
+//    $inputFileType = 'Excel2003XML';
+//    $inputFileType = 'OOCalc';
+//    $inputFileType = 'Gnumeric';
 $inputFileName = './sampleData/example1.xls';
 $sheetnames = array('Data Sheet #1','Data Sheet #3');
 
@@ -46,7 +46,7 @@ echo '<hr />';
 echo $objPHPExcel->getSheetCount(),' worksheet',(($objPHPExcel->getSheetCount() == 1) ? '' : 's'),' loaded<br /><br />';
 $loadedSheetNames = $objPHPExcel->getSheetNames();
 foreach($loadedSheetNames as $sheetIndex => $loadedSheetName) {
-	echo $sheetIndex,' -> ',$loadedSheetName,'<br />';
+    echo $sheetIndex,' -> ',$loadedSheetName,'<br />';
 }
 
 

@@ -2,13 +2,13 @@
 
 ## Reading and writing to file
 
-As you already know from part  REF _Ref191885438 \w \h 3.3  REF _Ref191885438 \h Readers and writers, reading and writing to a persisted storage is not possible using the base PHPExcel classes. For this purpose, PHPExcel provides readers and writers, which are implementations of PHPExcel_Writer_IReader and PHPExcel_Writer_IWriter.
+As you already know from part REF \_Ref191885438 \w \h 3.3 REF \_Ref191885438 \h Readers and writers, reading and writing to a persisted storage is not possible using the base PHPExcel classes. For this purpose, PHPExcel provides readers and writers, which are implementations of PHPExcel_Writer_IReader and PHPExcel_Writer_IWriter.
 
 ### PHPExcel_IOFactory
 
 The PHPExcel API offers multiple methods to create a PHPExcel_Writer_IReader or PHPExcel_Writer_IWriter instance:
 
-Direct creation via PHPExcel_IOFactory.  All examples underneath demonstrate the direct creation method. Note that you can also use the PHPExcel_IOFactory class to do this.
+Direct creation via PHPExcel_IOFactory. All examples underneath demonstrate the direct creation method. Note that you can also use the PHPExcel_IOFactory class to do this.
 
 #### Creating PHPExcel_Reader_IReader using PHPExcel_IOFactory
 
@@ -139,7 +139,7 @@ $objWriter->setOffice2003Compatibility(true);
 $objWriter->save("05featuredemo.xlsx");
 ```
 
-__Office2003 compatibility should only be used when needed__
+**Office2003 compatibility should only be used when needed**
 Office2003 compatibility option should only be used when needed. This option disables several Office2007 file format options, resulting in a lower-featured Office2007 spreadsheet when this option is used.
 
 ### Excel 5 (BIFF) file format
@@ -148,7 +148,7 @@ Excel5 file format is the old Excel file format, implemented in PHPExcel to prov
 
 Excel5 file format will not be developed any further, it just provides an additional file format for PHPExcel.
 
-__Excel5 (BIFF) limitations__
+**Excel5 (BIFF) limitations**
 Please note that BIFF file format has some limits regarding to styling cells and handling large spreadsheets via PHP.
 
 #### PHPExcel_Reader_Excel5
@@ -220,7 +220,7 @@ $objWriter->save("05featuredemo.xls");
 
 Excel 2003 XML file format is a file format which can be used in older versions of Microsoft Excel.
 
-__Excel 2003 XML limitations__
+**Excel 2003 XML limitations**
 Please note that Excel 2003 XML format has some limits regarding to styling cells and handling large spreadsheets via PHP.
 
 #### PHPExcel_Reader_Excel2003XML
@@ -262,7 +262,7 @@ $objPHPExcel = $objReader->load("06largescale.xml");
 
 Symbolic Link (SYLK) is a Microsoft file format typically used to exchange data between applications, specifically spreadsheets. SYLK files conventionally have a .slk suffix. Composed of only displayable ANSI characters, it can be easily created and processed by other applications, such as databases.
 
-__SYLK limitations__
+**SYLK limitations**
 Please note that SYLK file format has some limits regarding to styling cells and handling large spreadsheets via PHP.
 
 #### PHPExcel_Reader_SYLK
@@ -343,7 +343,7 @@ $objPHPExcel = $objReader->load("06largescale.ods");
 
 CSV (Comma Separated Values) are often used as an import/export file format with other systems. PHPExcel allows reading and writing to CSV files.
 
-__CSV limitations__
+**CSV limitations**
 Please note that CSV file format has some limits regarding to styling cells, number formatting, ...
 
 #### PHPExcel_Reader_CSV
@@ -391,7 +391,7 @@ $objReader = new PHPExcel_Reader_CSV();
 $objReader->setDelimiter(';');
 $objReader->setEnclosure('');
 $objReader->setLineEnding("\r\n");
-$objReader->setSheetIndex(5); 
+$objReader->setSheetIndex(5);
 
 $objReader->loadIntoExisting("05featuredemo.csv", $objPHPExcel);
 ```
@@ -475,7 +475,7 @@ Note that the above code sets decimal and thousand separators as global options.
 
 PHPExcel allows you to read or write a spreadsheet as HTML format, for quick representation of the data in it to anyone who does not have a spreadsheet application on their PC, or loading files saved by other scripts that simply create HTML markup and give it a .xls file extension.
 
-__HTML limitations__
+**HTML limitations**
 Please note that HTML file format has some limits regarding to styling cells, number formatting, ...
 
 #### PHPExcel_Reader_HTML
@@ -490,7 +490,7 @@ $objReader = new PHPExcel_Reader_HTML();
 $objPHPExcel = $objReader->load("05featuredemo.html");
 ```
 
-__HTML limitations__
+**HTML limitations**
 Please note that HTML reader is still experimental and does not yet support merged cells or nested tables cleanly
 
 #### PHPExcel_Writer_HTML
@@ -525,15 +525,24 @@ $objWriter->setSheetIndex(0);
 
 ##### Setting the images root of the HTML file
 
-There might be situations where you want to explicitly set the included images root. For example, one might want to see 
+There might be situations where you want to explicitly set the included images root. For example, one might want to see
+
 ```html
-<img style="position: relative; left: 0px; top: 0px; width: 140px; height: 78px;" src="http://www.domain.com/*images/logo.jpg" border="0"> 
+<img
+  style="position: relative; left: 0px; top: 0px; width: 140px; height: 78px;"
+  src="http://www.domain.com/*images/logo.jpg"
+  border="0"
+/>
 ```
 
 instead of
 
 ```html
-<img style="position: relative; left: 0px; top: 0px; width: 140px; height: 78px;" src="./images/logo.jpg" border="0">.
+<img
+  style="position: relative; left: 0px; top: 0px; width: 140px; height: 78px;"
+  src="./images/logo.jpg"
+  border="0"
+/>.
 ```
 
 You can use the following code to achieve this result:
@@ -559,10 +568,10 @@ There might be a situation where you want to embed the generated HTML in an exis
 
 Supported methods:
 
- - generateHTMLHeader()
- - generateStyles()
- - generateSheetData()
- - generateHTMLFooter()
+- generateHTMLHeader()
+- generateStyles()
+- generateSheetData()
+- generateHTMLFooter()
 
 Here's an example which retrieves all parts independently and merges them into a resulting HTML page:
 
@@ -612,7 +621,7 @@ See section PHPExcel_Writer_CSV how to control the appearance of these.
 
 PHPExcel allows you to write a spreadsheet into PDF format, for fast distribution of represented data.
 
-__PDF limitations__
+**PDF limitations**
 Please note that PDF file format has some limits regarding to styling cells, number formatting, ...
 
 #### PHPExcel_Writer_PDF
@@ -621,11 +630,11 @@ PHPExcel’s PDF Writer is a wrapper for a 3rd-Party PDF Rendering library such 
 
 Currently, the following libraries are supported:
 
-Library | Version used for testing | Downloadable from                | PHPExcel Internal Constant
---------|--------------------------|----------------------------------|----------------------------
-tcPDF   | 5.9                      | http://www.tcpdf.org/            | PDF_RENDERER_TCPDF
-mPDF    | 5.4                      | http://www.mpdf1.com/mpdf/       | PDF_RENDERER_MPDF
-domPDF  | 0.6.0 beta 3             | http://code.google.com/p/dompdf/ | PDF_RENDERER_DOMPDF
+| Library | Version used for testing | Downloadable from                | PHPExcel Internal Constant |
+| ------- | ------------------------ | -------------------------------- | -------------------------- |
+| tcPDF   | 5.9                      | http://www.tcpdf.org/            | PDF_RENDERER_TCPDF         |
+| mPDF    | 5.4                      | http://www.mpdf1.com/mpdf/       | PDF_RENDERER_MPDF          |
+| domPDF  | 0.6.0 beta 3             | http://code.google.com/p/dompdf/ | PDF_RENDERER_DOMPDF        |
 
 The different libraries have different strengths and weaknesses. Some generate better formatted output than others, some are faster or use less memory than others, while some generate smaller .pdf files. It is the developers choice which one they wish to use, appropriate to their own circumstances.
 
@@ -710,5 +719,5 @@ $objWriter->save('write.xls');
 
 Notice that it is ok to load an xlsx file and generate an xls file.
 
-  [21]: http://pear.php.net/package/Spreadsheet_Excel_Writer
-  [22]: http://www.codeplex.com/PHPExcel/Wiki/View.aspx?title=Credits&referringTitle=Home
+[21]: http://pear.php.net/package/Spreadsheet_Excel_Writer
+[22]: http://www.codeplex.com/PHPExcel/Wiki/View.aspx?title=Credits&referringTitle=Home

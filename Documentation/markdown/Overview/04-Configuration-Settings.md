@@ -1,6 +1,5 @@
 # PHPExcel Developer Documentation
 
-
 ## Configuration Settings
 
 Once you have included the PHPExcel files in your script, but before instantiating a PHPExcel object or loading a workbook file, there are a number of configuration options that can be set which will affect the subsequent behaviour of the script.
@@ -45,7 +44,7 @@ When using cache_to_discISAM all cells are held in a temporary disk file, with o
 
 ```php
 $cacheMethod = PHPExcel_CachedObjectStorageFactory:: cache_to_discISAM;
-$cacheSettings = array( 
+$cacheSettings = array(
     'dir' => '/usr/local/tmp'
 );
 PHPExcel_Settings::setCacheStorageMethod($cacheMethod, $cacheSettings);
@@ -59,7 +58,7 @@ Like cache_to_discISAM, when using cache_to_phpTemp all cells are held in the ph
 
 ```php
 $cacheMethod = PHPExcel_CachedObjectStorageFactory:: cache_to_phpTemp;
-$cacheSettings = array( 
+$cacheSettings = array(
     'memoryCacheSize' => '8MB'
 );
 PHPExcel_Settings::setCacheStorageMethod($cacheMethod, $cacheSettings);
@@ -73,7 +72,7 @@ When using cache_to_apc, cell objects are maintained in APC with only an index m
 
 ```php
 $cacheMethod = PHPExcel_CachedObjectStorageFactory::cache_to_APC;
-$cacheSettings = array( 
+$cacheSettings = array(
     'cacheTime' => 600
 );
 PHPExcel_Settings::setCacheStorageMethod($cacheMethod, $cacheSettings);
@@ -89,7 +88,7 @@ By default, PHPExcel looks for a memcache server on localhost at port 11211. It 
 
 ```php
 $cacheMethod = PHPExcel_CachedObjectStorageFactory::cache_to_memcache;
-$cacheSettings = array( 
+$cacheSettings = array(
     'memcacheServer' => 'localhost',
     'memcachePort'   => 11211,
     'cacheTime'      => 600
@@ -105,7 +104,7 @@ When using cache_to_wincache, cell objects are maintained in Wincache with only 
 
 ```php
 $cacheMethod = PHPExcel_CachedObjectStorageFactory::cache_to_wincache;
-$cacheSettings = array( 
+$cacheSettings = array(
     'cacheTime' => 600
 );
 PHPExcel_Settings::setCacheStorageMethod($cacheMethod, $cacheSettings);
@@ -120,7 +119,6 @@ Uses an SQLite 2 "in-memory" database for caching cell data. Unlike other cachin
 #### PHPExcel_CachedObjectStorageFactory::cache_to_sqlite3;
 
 Uses an SQLite 3 "in-memory" database for caching cell data. Unlike other caching methods, neither cells nor an index are held in PHP memory - an indexed database table makes it unnecessary to hold any index in PHP memory, which makes this the most memory-efficient of the cell caching methods.
-
 
 ### Language/Locale
 
@@ -137,4 +135,3 @@ if (!$validLocale) {
 If Brazilian Portuguese language files aren't available, then Portuguese will be enabled instead: if Portuguese language files aren't available, then the setLocale() method will return an error, and American English (en_us) settings will be used throughout.
 
 More details of the features available once a locale has been set, including a list of the languages and locales currently supported, can be found in the section of this document entitled "Locale Settings for Formulae".
-

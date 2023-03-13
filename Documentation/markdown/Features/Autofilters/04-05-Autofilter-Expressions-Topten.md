@@ -1,5 +1,4 @@
-# PHPExcel AutoFilter Reference 
-
+# PHPExcel AutoFilter Reference
 
 ## Autofilter Expressions
 
@@ -7,9 +6,9 @@
 
 Top Ten Filters are similar to Dynamic Filters in that they are based on a summarisation of the actual data values in the cells. However, unlike Dynamic Filters where you can only select a single option, Top Ten Filters allow you to select based on a number of criteria:
 
-![04-05-custom-topten-1.png](./images/04-05-topten-autofilter-1.png "")
+![04-05-custom-topten-1.png](images/04-05-topten-autofilter-1.png)
 
-![04-05-custom-topten-2.png](./images/04-05-topten-autofilter-2.png "")
+![04-05-custom-topten-2.png](images/04-05-topten-autofilter-2.png)
 
 You can identify whether you want the top (highest) or bottom (lowest) values.You can identify how many values you wish to select in the filterYou can identify whether this should be a percentage or a number of items.
 
@@ -66,4 +65,3 @@ and
     -------------------------------------|----------|
     AUTOFILTER_COLUMN_RULE_TOPTEN_TOP    | 'top'    |
     AUTOFILTER_COLUMN_RULE_TOPTEN_BOTTOM | 'bottom' |
-

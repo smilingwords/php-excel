@@ -58,7 +58,7 @@ class PHPExcel_Writer_Excel5_Escher
      * @var array
      */
     private $spTypes;
-    
+
     /**
      * Constructor
      *
@@ -308,7 +308,7 @@ class PHPExcel_Writer_Excel5_Escher
                     // get the shape offsets relative to the spgrContainer record
                     $spOffsets = $writer->getSpOffsets();
                     $spTypes   = $writer->getSpTypes();
-                    
+
                     // save the shape offsets relative to dgContainer
                     foreach ($spOffsets as & $spOffset) {
                         $spOffset += 24; // add length of dgContainer header data (8 bytes) plus dg data (16 bytes)
@@ -351,7 +351,7 @@ class PHPExcel_Writer_Excel5_Escher
                     // save the shape offsets (where new shape records begin)
                     $totalSize += strlen($spData);
                     $spOffsets[] = $totalSize;
-                    
+
                     $spTypes = array_merge($spTypes, $writer->getSpTypes());
                 }
 
@@ -456,7 +456,7 @@ class PHPExcel_Writer_Excel5_Escher
                     $endOffsetY = $this->object->getEndOffsetY();
 
                     $clientAnchorData = pack('vvvvvvvvv', $this->object->getSpFlag(), $c1, $startOffsetX, $r1, $startOffsetY, $c2, $endOffsetX, $r2, $endOffsetY);
-                    
+
                     $length            = strlen($clientAnchorData);
 
                     $recVerInstance  = $recVer;

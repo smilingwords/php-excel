@@ -4,7 +4,7 @@
 
 The following pages offer you some widely-used PHPExcel recipes. Please note that these do NOT offer complete documentation on specific PHPExcel API functions, but just a bump to get you started. If you need specific API functions, please refer to the API documentation.
 
-For example,  REF _Ref191885321 \w \h 4.4.7  REF _Ref191885321 \h Setting a worksheet's page orientation and size covers setting a page orientation to A4. Other paper formats, like US Letter, are not covered in this document, but in the PHPExcel API documentation.
+For example, REF \_Ref191885321 \w \h 4.4.7 REF \_Ref191885321 \h Setting a worksheet's page orientation and size covers setting a page orientation to A4. Other paper formats, like US Letter, are not covered in this document, but in the PHPExcel API documentation.
 
 ### Setting a spreadsheet's metadata
 
@@ -84,7 +84,7 @@ The PHPExcel_Shared_Date::PHPToExcel() method will also work with a PHP DateTime
 
 Similarly, times (or date and time values) can be entered in the same fashion: just remember to use an appropriate format code.
 
-__Notes:__
+**Notes:**
 
 See section "Using value binders to facilitate data entry" to learn more about the AdvancedValueBinder used in the first example.
 In previous versions of PHPExcel up to and including 1.6.6, when a cell had a date-like number format code, it was possible to enter a date directly using an integer PHP-time without converting to Excel date format. Starting with PHPExcel 1.6.7 this is no longer supported.
@@ -94,10 +94,10 @@ Excel can also operate in a 1904-based calendar (default for workbooks saved on 
 
 Inside the Excel file, formulas are always stored as they would appear in an English version of Microsoft Office Excel, and PHPExcel handles all formulae internally in this format. This means that the following rules hold:
 
- - Decimal separator is '.' (period)
- - Function argument separator is ',' (comma)
- - Matrix row separator is ';' (semicolon)
- - English function names must be used
+- Decimal separator is '.' (period)
+- Function argument separator is ',' (comma)
+- Matrix row separator is ';' (semicolon)
+- English function names must be used
 
 This is regardless of which language version of Microsoft Office Excel may have been used to create the Excel file.
 
@@ -126,7 +126,7 @@ A cell's formula can be read again using the following line of code:
 $formula = $objPHPExcel->getActiveSheet()->getCell('B8')->getValue();
 ```
 
-If you need the calculated value of a cell, use the following code. This is further explained in  REF _Ref191885372 \w \h  \* MERGEFORMAT 4.4.35.
+If you need the calculated value of a cell, use the following code. This is further explained in REF \_Ref191885372 \w \h \* MERGEFORMAT 4.4.35.
 
 ```php
 $value = $objPHPExcel->getActiveSheet()->getCell('B8')->getCalculatedValue();
@@ -195,11 +195,11 @@ $objPHPExcel->getActiveSheet()->getCell('A1')->setValue("hello\nworld");
 $objPHPExcel->getActiveSheet()->getStyle('A1')->getAlignment()->setWrapText(true);
 ```
 
-__Tip__
+**Tip**
 
 Read more about formatting cells using getStyle() elsewhere.
 
-__Tip__
+**Tip**
 
 AdvancedValuebinder.php automatically turns on "wrap text" for the cell when it sees a newline character in a string that you are inserting in a cell. Just like Microsoft Office Excel. Try this:
 
@@ -219,7 +219,7 @@ You can set a cell's datatype explicitly by using the cell's setValueExplicit me
 ```php
 $objPHPExcel->getActiveSheet()->getCell('A1')
     ->setValueExplicit(
-        '25', 
+        '25',
         PHPExcel_Cell_DataType::TYPE_NUMERIC
     );
 ```
@@ -261,11 +261,11 @@ The page setup scaling options in PHPExcel relate directly to the scaling option
 
 Default values in PHPExcel correspond to default values in MS Office Excel as shown in illustration
 
-![08-page-setup-scaling-options.png](./images/08-page-setup-scaling-options.png "")
+![08-page-setup-scaling-options.png](images/08-page-setup-scaling-options.png)
 
     method              | initial value | calling method will trigger | Note
     --------------------|:-------------:|-----------------------------|------
-    setFitToPage(...)   | FALSE         | -                           | 
+    setFitToPage(...)   | FALSE         | -                           |
     setScale(...)       | 100           | setFitToPage(FALSE)         |
     setFitToWidth(...)  | 1             | setFitToPage(TRUE)          | value 0 means do-not-fit-to-width
     setFitToHeight(...) | 1             | setFitToPage(TRUE)          | value 0 means do-not-fit-to-height
@@ -296,7 +296,7 @@ $objPHPExcel->getActiveSheet()->getPageMargins()->setBottom(1);
 
 Note that the margin values are specified in inches.
 
-![08-page-setup-margins.png](./images/08-page-setup-margins.png "")
+![08-page-setup-margins.png](images/08-page-setup-margins.png)
 
 #### Center a page horizontally/vertically
 
@@ -322,47 +322,48 @@ Substitution and formatting codes (starting with &) can be used inside headers a
 
 The first occurrence of the following codes turns the formatting ON, the second occurrence turns it OFF again:
 
- - Strikethrough
- - Superscript
- - Subscript
+- Strikethrough
+- Superscript
+- Subscript
 
 Superscript and subscript cannot both be ON at same time. Whichever comes first wins and the other is ignored, while the first is ON.
 
 The following codes are supported by Excel2007:
 
-Code                   | Meaning
------------------------|-----------
-&L                     | Code for "left section" (there are three header / footer locations, "left", "center", and "right"). When two or more occurrences of this section marker exist, the contents from all markers are concatenated, in the order of appearance, and placed into the left section.
-&P                     | Code for "current page #"
-&N                     | Code for "total pages"
-&font size             | Code for "text font size", where font size is a font size in points.
-&K                     | Code for "text font color" - RGB Color is specified as RRGGBB Theme Color is specifed as TTSNN where TT is the theme color Id, S is either "+" or "-" of the tint/shade value, NN is the tint/shade value.
-&S                     | Code for "text strikethrough" on / off
-&X                     | Code for "text super script" on / off
-&Y                     | Code for "text subscript" on / off
-&C                     | Code for "center section". When two or more occurrences of this section marker exist, the contents from all markers are concatenated, in the order of appearance, and placed into the center section.
-&D                     | Code for "date"
-&T                     | Code for "time"
-&G                     | Code for "picture as background" - Please make sure to add the image to the header/footer[^print-footer-image-footnote]
-&U                     | Code for "text single underline"
-&E                     | Code for "double underline"
-&R                     | Code for "right section". When two or more occurrences of this section marker exist, the contents from all markers are concatenated, in the order of appearance, and placed into the right section.
-&Z                     | Code for "this workbook's file path"
-&F                     | Code for "this workbook's file name"
-&A                     | Code for "sheet tab name"
-&+                     | Code for add to page #
-&-                     | Code for subtract from page #
-&"font name,font type" | Code for "text font name" and "text font type", where font name and font type are strings specifying the name and type of the font, separated by a comma. When a hyphen appears in font name, it means "none specified". Both of font name and font type can be localized values.
-&"-,Bold"              | Code for "bold font style"
-&B                     | Code for "bold font style"
-&"-,Regular"           | Code for "regular font style"
-&"-,Italic"            | Code for "italic font style"
-&I                     | Code for "italic font style"
-&"-,Bold Italic"       | Code for "bold italic font style"
-&O                     | Code for "outline style"
-&H                     | Code for "shadow style"
+| Code                   | Meaning                                                                                                                                                                                                                                                                           |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| &L                     | Code for "left section" (there are three header / footer locations, "left", "center", and "right"). When two or more occurrences of this section marker exist, the contents from all markers are concatenated, in the order of appearance, and placed into the left section.      |
+| &P                     | Code for "current page #"                                                                                                                                                                                                                                                         |
+| &N                     | Code for "total pages"                                                                                                                                                                                                                                                            |
+| &font size             | Code for "text font size", where font size is a font size in points.                                                                                                                                                                                                              |
+| &K                     | Code for "text font color" - RGB Color is specified as RRGGBB Theme Color is specifed as TTSNN where TT is the theme color Id, S is either "+" or "-" of the tint/shade value, NN is the tint/shade value.                                                                        |
+| &S                     | Code for "text strikethrough" on / off                                                                                                                                                                                                                                            |
+| &X                     | Code for "text super script" on / off                                                                                                                                                                                                                                             |
+| &Y                     | Code for "text subscript" on / off                                                                                                                                                                                                                                                |
+| &C                     | Code for "center section". When two or more occurrences of this section marker exist, the contents from all markers are concatenated, in the order of appearance, and placed into the center section.                                                                             |
+| &D                     | Code for "date"                                                                                                                                                                                                                                                                   |
+| &T                     | Code for "time"                                                                                                                                                                                                                                                                   |
+| &G                     | Code for "picture as background" - Please make sure to add the image to the header/footer[^print-footer-image-footnote]                                                                                                                                                           |
+| &U                     | Code for "text single underline"                                                                                                                                                                                                                                                  |
+| &E                     | Code for "double underline"                                                                                                                                                                                                                                                       |
+| &R                     | Code for "right section". When two or more occurrences of this section marker exist, the contents from all markers are concatenated, in the order of appearance, and placed into the right section.                                                                               |
+| &Z                     | Code for "this workbook's file path"                                                                                                                                                                                                                                              |
+| &F                     | Code for "this workbook's file name"                                                                                                                                                                                                                                              |
+| &A                     | Code for "sheet tab name"                                                                                                                                                                                                                                                         |
+| &+                     | Code for add to page #                                                                                                                                                                                                                                                            |
+| &-                     | Code for subtract from page #                                                                                                                                                                                                                                                     |
+| &"font name,font type" | Code for "text font name" and "text font type", where font name and font type are strings specifying the name and type of the font, separated by a comma. When a hyphen appears in font name, it means "none specified". Both of font name and font type can be localized values. |
+| &"-,Bold"              | Code for "bold font style"                                                                                                                                                                                                                                                        |
+| &B                     | Code for "bold font style"                                                                                                                                                                                                                                                        |
+| &"-,Regular"           | Code for "regular font style"                                                                                                                                                                                                                                                     |
+| &"-,Italic"            | Code for "italic font style"                                                                                                                                                                                                                                                      |
+| &I                     | Code for "italic font style"                                                                                                                                                                                                                                                      |
+| &"-,Bold Italic"       | Code for "bold italic font style"                                                                                                                                                                                                                                                 |
+| &O                     | Code for "outline style"                                                                                                                                                                                                                                                          |
+| &H                     | Code for "shadow style"                                                                                                                                                                                                                                                           |
 
- [^print-footer-image-footnote]: z
+[^print-footer-image-footnote]: z
+
 ```php
 $objDrawing = new PHPExcel_Worksheet_HeaderFooterDrawing();
 $objDrawing->setName('PHPExcel logo');
@@ -371,7 +372,7 @@ $objDrawing->setHeight(36);
 $objPHPExcel->getActiveSheet()->getHeaderFooter()->addImage($objDrawing, PHPExcel_Worksheet_HeaderFooter::IMAGE_HEADER_LEFT);
 ```
 
-__Tip__
+**Tip**
 
 The above table of codes may seem overwhelming first time you are trying to figure out how to write some header or footer. Luckily, there is an easier way. Let Microsoft Office Excel do the work for you.For example, create in Microsoft Office Excel an xlsx file where you insert the header and footer as desired using the programs own interface. Save file as test.xlsx. Now, take that file and read off the values using PHPExcel as follows:
 
@@ -433,7 +434,7 @@ $objPHPExcel->getActiveSheet()->getPageSetup()->setPrintArea('A1:E5,G4:M20');
 
 #### Formatting cells
 
-A cell can be formatted with font, border, fill, ... style information. For example, one can set the  foreground colour of a cell to red, aligned to the right, and the border to black and thick border style. Let's do that on cell B2:
+A cell can be formatted with font, border, fill, ... style information. For example, one can set the foreground colour of a cell to red, aligned to the right, and the border to black and thick border style. Let's do that on cell B2:
 
 ```php
 $objPHPExcel->getActiveSheet()->getStyle('B2')
@@ -462,7 +463,7 @@ $objPHPExcel->getActiveSheet()->getStyle('B3:B7')->getFill()
     ->getStartColor()->setARGB('FFFF0000');
 ```
 
-__Tip__
+**Tip**
 It is recommended to style many cells at once, using e.g. getStyle('A1:M500'), rather than styling the cells individually in a loop. This is much faster compared to looping through cells and styling them individually.
 
 There is also an alternative manner to set styles. The following code sets a cell's style to font bold, alignment right, top border thin and a gradient fill:
@@ -542,7 +543,7 @@ $objPHPExcel->getActiveSheet()->getStyle('A1')->getNumberFormat()
     ->setFormatCode('0000'); // will show as 0019 in Excel
 ```
 
-__Tip__
+**Tip**
 The rules for composing a number format code in Excel can be rather complicated. Sometimes you know how to create some number format in Microsoft Office Excel, but don't know what the underlying number format code looks like. How do you find it?
 
 The readers shipped with PHPExcel come to the rescue. Load your template workbook using e.g. Excel2007 reader to reveal the number format code. Example how read a number format code for cell A1:
@@ -553,7 +554,7 @@ $objPHPExcel = $objReader->load('template.xlsx');
 var_dump($objPHPExcel->getActiveSheet()->getStyle('A1')->getNumberFormat()->getFormatCode());
 ```
 
-Advanced users may find it faster to inspect the number format code directly by renaming template.xlsx to template.zip, unzipping, and looking for the relevant piece of XML code holding the number format code in *xl/styles.xml*.
+Advanced users may find it faster to inspect the number format code directly by renaming template.xlsx to template.zip, unzipping, and looking for the relevant piece of XML code holding the number format code in _xl/styles.xml_.
 
 #### Alignment and wrap text
 
@@ -621,11 +622,9 @@ Additional shortcut borders come in handy like in the example above. These are t
     vertical   | getVertical()
     horizontal | getHorizontal()
 
-
-
 An overview of all border shortcuts can be seen in the following image:
 
-![08-styling-border-options.png](./images/08-styling-border-options.png "")
+![08-styling-border-options.png](images/08-styling-border-options.png)
 
 If you simultaneously set e.g. allborders and vertical, then we have "overlapping" borders, and one of the components has to win over the other where there is border overlap. In PHPExcel, from weakest to strongest borders, the list is as follows: allborders, outline/inside, vertical/horizontal, left/right/top/bottom/diagonal.
 
@@ -664,8 +663,8 @@ If you want to copy the ruleset to other cells, you can duplicate the style obje
 ```php
 $objPHPExcel->getActiveSheet()
     ->duplicateStyle(
-        $objPHPExcel->getActiveSheet()->getStyle('B2'), 
-        'B3:B7' 
+        $objPHPExcel->getActiveSheet()->getStyle('B2'),
+        'B3:B7'
     );
 ```
 
@@ -689,7 +688,7 @@ $objPHPExcel->getActiveSheet()
     ->getText()->createTextRun('Total amount on the current invoice, excluding VAT.');
 ```
 
-![08-cell-comment.png](./images/08-cell-comment.png "")
+![08-cell-comment.png](images/08-cell-comment.png)
 
 ### Apply autofilter to a range of cells
 
@@ -699,8 +698,8 @@ To apply an autofilter to a range of cells, use the following code:
 $objPHPExcel->getActiveSheet()->setAutoFilter('A1:C9');
 ```
 
-__Make sure that you always include the complete filter range!__
-Excel does support setting only the captionrow, but that's __not__ a best practice...
+**Make sure that you always include the complete filter range!**
+Excel does support setting only the captionrow, but that's **not** a best practice...
 
 ### Setting security on a spreadsheet
 
@@ -737,7 +736,7 @@ $objPHPExcel->getActiveSheet()->getStyle('B1')
     ->setLocked(PHPExcel_Style_Protection::PROTECTION_UNPROTECTED);
 ```
 
-__Make sure you enable worksheet protection if you need any of the worksheet protection features!__ This can be done using the following code:
+**Make sure you enable worksheet protection if you need any of the worksheet protection features!** This can be done using the following code:
 
 ```php
 $objPHPExcel->getActiveSheet()->getProtection()->setSheet(true);
@@ -823,9 +822,9 @@ If you want PHPExcel to perform an automatic width calculation, use the followin
 $objPHPExcel->getActiveSheet()->getColumnDimension('B')->setAutoSize(true);
 ```
 
-![08-column-width.png](./images/08-column-width.png "")
+![08-column-width.png](images/08-column-width.png)
 
-The measure for column width in PHPExcel does __not__ correspond exactly to the measure you may be used to in Microsoft Office Excel. Column widths are difficult to deal with in Excel, and there are several measures for the column width.1) __Inner width in character units__ (e.g. 8.43 this is probably what you are familiar with in Excel)2) __Full width in pixels__ (e.g. 64 pixels)3) __Full width in character units__ (e.g. 9.140625, value -1 indicates unset width)__PHPExcel always operates with 3) "Full width in character units"__ which is in fact the only value that is stored in any Excel file, hence the most reliable measure. Unfortunately, __Microsoft ____Office ____Excel does not present you with this ____measure__. Instead measures 1) and 2) are computed by the application when the file is opened and these values are presented in various dialogues and tool tips.The character width unit is the width of a '0' (zero) glyph in the workbooks default font. Therefore column widths measured in character units in two different workbooks can only be compared if they have the same default workbook font.If you have some Excel file and need to know the column widths in measure 3), you can read the Excel file with PHPExcel and echo the retrieved values.
+The measure for column width in PHPExcel does **not** correspond exactly to the measure you may be used to in Microsoft Office Excel. Column widths are difficult to deal with in Excel, and there are several measures for the column width.1) **Inner width in character units** (e.g. 8.43 this is probably what you are familiar with in Excel)2) **Full width in pixels** (e.g. 64 pixels)3) **Full width in character units** (e.g. 9.140625, value -1 indicates unset width)**PHPExcel always operates with 3) "Full width in character units"** which is in fact the only value that is stored in any Excel file, hence the most reliable measure. Unfortunately, **Microsoft \_\_**Office \_**\_Excel does not present you with this \_\_**measure\_\_. Instead measures 1) and 2) are computed by the application when the file is opened and these values are presented in various dialogues and tool tips.The character width unit is the width of a '0' (zero) glyph in the workbooks default font. Therefore column widths measured in character units in two different workbooks can only be compared if they have the same default workbook font.If you have some Excel file and need to know the column widths in measure 3), you can read the Excel file with PHPExcel and echo the retrieved values.
 
 ### Show/hide a column
 
@@ -1010,13 +1009,13 @@ foreach ($objPHPExcel->getActiveSheet()->getDrawingCollection() as $drawing) {
         ob_end_clean();
         switch ($drawing->getMimeType()) {
             case PHPExcel_Worksheet_MemoryDrawing::MIMETYPE_PNG :
-                $extension = 'png'; 
+                $extension = 'png';
                 break;
             case PHPExcel_Worksheet_MemoryDrawing::MIMETYPE_GIF:
-                $extension = 'gif'; 
+                $extension = 'gif';
                 break;
             case PHPExcel_Worksheet_MemoryDrawing::MIMETYPE_JPEG :
-                $extension = 'jpg'; 
+                $extension = 'jpg';
                 break;
         }
     } else {
@@ -1037,7 +1036,7 @@ foreach ($objPHPExcel->getActiveSheet()->getDrawingCollection() as $drawing) {
 
 Adding rich text to a cell can be done using PHPExcel_RichText instances. Here''s an example, which creates the following rich text string:
 
- > This invoice is *__payable within thirty days after the end of the month__* unless specified otherwise on the invoice.
+> This invoice is _**payable within thirty days after the end of the month**_ unless specified otherwise on the invoice.
 
 ```php
 $objRichText = new PHPExcel_RichText();
@@ -1073,13 +1072,13 @@ Optionally, a fourth parameter can be passed defining the named range local (i.e
 
 Sometimes, one really wants to output a file to a client''s browser, especially when creating spreadsheets on-the-fly. There are some easy steps that can be followed to do this:
 
- 1. Create your PHPExcel spreadsheet
- 2. Output HTTP headers for the type of document you wish to output
- 3. Use the PHPExcel_Writer_* of your choice, and save to "php://output" 
+1.  Create your PHPExcel spreadsheet
+2.  Output HTTP headers for the type of document you wish to output
+3.  Use the PHPExcel*Writer*\* of your choice, and save to "php://output"
 
 PHPExcel_Writer_Excel2007 uses temporary storage when writing to php://output. By default, temporary files are stored in the script's working directory. When there is no access, it falls back to the operating system's temporary files location.
 
-__This may not be safe for unauthorized viewing!__ 
+**This may not be safe for unauthorized viewing!**
 Depending on the configuration of your operating system, temporary storage can be read by anyone using the same temporary storage folder. When confidentiality of your document is needed, it is recommended not to use php://output.
 
 #### HTTP headers
@@ -1187,18 +1186,18 @@ Think of createSheet() as the "Insert sheet" button in Excel. When you hit that 
 
 ### Hidden worksheets (Sheet states)
 
-Set a worksheet to be __hidden__ using this code:
+Set a worksheet to be **hidden** using this code:
 
 ```php
 $objPHPExcel->getActiveSheet()
     ->setSheetState(PHPExcel_Worksheet::SHEETSTATE_HIDDEN);
 ```
 
-Sometimes you may even want the worksheet to be __"very hidden"__. The available sheet states are :
+Sometimes you may even want the worksheet to be **"very hidden"**. The available sheet states are :
 
- - PHPExcel_Worksheet::SHEETSTATE_VISIBLE
- - PHPExcel_Worksheet::SHEETSTATE_HIDDEN
- - PHPExcel_Worksheet::SHEETSTATE_VERYHIDDEN
+- PHPExcel_Worksheet::SHEETSTATE_VISIBLE
+- PHPExcel_Worksheet::SHEETSTATE_HIDDEN
+- PHPExcel_Worksheet::SHEETSTATE_VERYHIDDEN
 
 In Excel the sheet state "very hidden" can only be set programmatically, e.g. with Visual Basic Macro. It is not possible to make such a sheet visible via the user interface.
 
@@ -1211,4 +1210,3 @@ Worksheets can be set individually whether column "A" should start at left or ri
 $objPHPExcel->getActiveSheet()
     ->setRightToLeft(true);
 ```
-

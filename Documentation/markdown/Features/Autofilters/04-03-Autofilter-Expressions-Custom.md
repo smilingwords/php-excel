@@ -1,5 +1,4 @@
-# PHPExcel AutoFilter Reference 
-
+# PHPExcel AutoFilter Reference
 
 ## Autofilter Expressions
 
@@ -7,9 +6,9 @@
 
 In MS Excel, Custom filters allow us to select more complex conditions using an operator as well as a value. Typical examples might be values that fall within a range (e.g. between -20 and +20), or text values with wildcards (e.g. beginning with the letter U). To handle this, they
 
-![04-03-custom-autofilter-1.png](./images/04-03-custom-autofilter-1.png "")
+![04-03-custom-autofilter-1.png](images/04-03-custom-autofilter-1.png)
 
-![04-03-custom-autofilter-2.png](./images/04-03-custom-autofilter-2.png "")
+![04-03-custom-autofilter-2.png](images/04-03-custom-autofilter-2.png)
 
 Custom filters are limited to 2 rules, and these can be joined using either an AND or an OR.
 
@@ -81,4 +80,3 @@ The valid set of operators for Custom Filters are defined in the PHPExcel_Worksh
     AUTOFILTER_COLUMN_RULE_GREATERTHANOREQUAL | 'greaterThanOrEqual' |
     AUTOFILTER_COLUMN_RULE_LESSTHAN           | 'lessThan'           |
     AUTOFILTER_COLUMN_RULE_LESSTHANOREQUAL    | 'lessThanOrEqual'    |
-

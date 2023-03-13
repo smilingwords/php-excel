@@ -1,6 +1,5 @@
 # PHPExcel User Documentation – Reading Spreadsheet Files
 
-
 ## Spreadsheet File Formats
 
 PHPExcel can read a number of different spreadsheet and file formats, although not all features are supported by all of the readers. Check the Functionality Cross-Reference document (Functionality Cross-Reference.xls) for a list that identifies which features are supported by which readers.
@@ -36,10 +35,11 @@ The Gnumeric file format is used by the Gnome Gnumeric spreadsheet application, 
 Comma Separated Value (CSV) file format is a common structuring strategy for text format files. In CSV flies, each line in the file represents a row of data and (within each line of the file) the different data fields (or columns) are separated from one another using a comma (","). If a data field contains a comma, then it should be enclosed (typically in quotation marks ("). Sometimes tabs "\t", or the pipe symbol ("|"), or a semi-colon (";") are used as separators instead of a comma, although other symbols can be used. Because CSV is a text-only format, it doesn't support any data formatting options.
 
 "CSV" is not a single, well-defined format (although see RFC 4180 for one definition that is commonly used). Rather, in practice the term "CSV" refers to any file that:
- - is plain text using a character set such as ASCII, Unicode, EBCDIC, or Shift JIS,
- - consists of records (typically one record per line),
- - with the records divided into fields separated by delimiters (typically a single reserved character such as comma, semicolon, or tab,
- - where every record has the same sequence of fields.
+
+- is plain text using a character set such as ASCII, Unicode, EBCDIC, or Shift JIS,
+- consists of records (typically one record per line),
+- with the records divided into fields separated by delimiters (typically a single reserved character such as comma, semicolon, or tab,
+- where every record has the same sequence of fields.
 
 Within these general constraints, many variations are in use. Therefore "CSV" files are not entirely portable. Nevertheless, the variations are fairly small, and many implementations allow users to glance at the file (which is feasible because it is plain text), and then specify the delimiter character(s), quoting rules, etc.
 
@@ -47,14 +47,12 @@ Within these general constraints, many variations are in use. Therefore "CSV" fi
 
 ### HTML
 
-HyperText Markup Language (HTML) is the main markup language for creating web pages and other information that can be displayed in a web browser. Files typically have an extension of .html or .htm.  HTML markup provides a means to create structured documents by denoting structural semantics for text such as headings, paragraphs, lists, links, quotes and other items. Since 1996, the HTML specifications have been maintained, with input from commercial software vendors, by the World Wide Web Consortium (W3C). However, in 2000, HTML also became an international standard (ISO/IEC 15445:2000). HTML 4.01 was published in late 1999, with further errata published through 2001. In 2004 development began on HTML5 in the Web Hypertext Application Technology Working Group (WHATWG), which became a joint deliverable with the W3C in 2008.
+HyperText Markup Language (HTML) is the main markup language for creating web pages and other information that can be displayed in a web browser. Files typically have an extension of .html or .htm. HTML markup provides a means to create structured documents by denoting structural semantics for text such as headings, paragraphs, lists, links, quotes and other items. Since 1996, the HTML specifications have been maintained, with input from commercial software vendors, by the World Wide Web Consortium (W3C). However, in 2000, HTML also became an international standard (ISO/IEC 15445:2000). HTML 4.01 was published in late 1999, with further errata published through 2001. In 2004 development began on HTML5 in the Web Hypertext Application Technology Working Group (WHATWG), which became a joint deliverable with the W3C in 2008.
 
-
-
-  [1]: http://msdn.microsoft.com/en-us/library/cc313154(v=office.12).aspx
-  [2]: http://download.microsoft.com/download/2/4/8/24862317-78F0-4C4B-B355-C7B2C1D997DB/%5bMS-XLS%5d.pdf
-  [3]: http://msdn.microsoft.com/en-us/library/aa140066%28office.10%29.aspx
-  [4]: http://www.ecma-international.org/news/TC45_current_work/TC45_available_docs.htm
-  [5]: http://www.oasis-open.org/committees/tc_home.php?wg_abbrev=office
-  [6]: http://xml.openoffice.org/general.html
-  [7]: http://projects.gnome.org/gnumeric/doc/file-format-gnumeric.shtml
+[1]: http://msdn.microsoft.com/en-us/library/cc313154(v=office.12).aspx
+[2]: http://download.microsoft.com/download/2/4/8/24862317-78F0-4C4B-B355-C7B2C1D997DB/%5bMS-XLS%5d.pdf
+[3]: http://msdn.microsoft.com/en-us/library/aa140066%28office.10%29.aspx
+[4]: http://www.ecma-international.org/news/TC45_current_work/TC45_available_docs.htm
+[5]: http://www.oasis-open.org/committees/tc_home.php?wg_abbrev=office
+[6]: http://xml.openoffice.org/general.html
+[7]: http://projects.gnome.org/gnumeric/doc/file-format-gnumeric.shtml
